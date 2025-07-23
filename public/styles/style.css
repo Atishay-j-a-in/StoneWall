@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Helvetica;
+}
+.bg{
+    background-image: url(/app/bg2.jpg);
+    position: absolute;
+   
+    z-index: -10;
+    width: 100vw;
+    height: 100vh;
+}
+img{
+    object-fit: fill;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.logo,.form{
+    margin: auto;
+}
+.sign, .login{
+    background-color: rgba(251, 204, 157, 0.853);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    overflow: hidden;
+  
+    height: 35px;
+  border:4px brown;
+border-style:dashed;
+border-radius: 10px;
+    margin-bottom: 20px;
+  
+}
+.sign:hover{
+    height:220px;
+    transition:height 1.5s ease;
+  
+}
+.login:hover{
+     height:150px;
+    transition:height 1s ease;
+
+}
+.passwd{
+    display: flex;
+    align-items: center;
+}
+.passwd input {
+   width: 195px;
+}
+.btnsign, .btnlogin{
+    margin:5px;
+    padding: 5px;
+    background-color: rgb(242, 212, 172);
+    color: #5e0707;
+    border: 2px double #5e0707;
+    font-size: 15px;
+    font-weight: bold;
+}
+form input{
+    padding: 3px;
+}
+.arrow {
+    display: none;
+}
+form{
+display: flex;
+margin: auto;
+    padding: 0px 20px;
+    gap: 8px;
+    width: 230px;
+
+flex-direction: column;
+}
+form div:first-of-type{
+        margin: 5px auto;
+    font-size: 25px;
+    font-weight: bold;
+    color: #bc1414;
+}
+@media (max-width:500px){
+    .main{
+        flex-direction: column;
+    }
+    .logo img{
+        width: 150px;
+        height: 150px;
+    }
+    .logo{
+        height: 15vh;
+    }
+    .form{
+        margin-top: 0vh;
+    }
+    .bg{
+         background-position: -300px -150px;
+    }
+   .arrow{
+    display: flex;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+            right: 14px;
+        top: 13px;
+   }
+}

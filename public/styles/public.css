@@ -1,0 +1,209 @@
+*{
+    scrollbar-width:thin;
+    scrollbar-color:brown bisque;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:100vh;
+    gap:5px;
+}
+img, button{
+    cursor: pointer;
+}
+.profile{
+    width:30vw;
+   
+}
+.posts{
+    width: 68vw;
+    
+}
+.posts,.profile{
+    background-color: rgba(251, 204, 157, 0.853);
+    color: #9f2828;
+    height: 98vh;
+    border-radius: 12px;
+}
+.write{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+        width: 100px;
+    height: 100px;
+    margin:0 5px;
+}
+.write textarea{
+    width: 66vw;
+    margin: 10px;
+    height: 100px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(209 184 159);
+    vertical-align: top;
+    text-align: left;
+    filter:drop-shadow(-7px -5px 4px rgb(117, 29, 29));
+    resize: none;
+  
+   overflow:hidden;
+}
+.send{
+    display: flex;
+    align-items: center;
+}
+.post{
+    width: 67vw;
+    padding: 10px 10px 0 10px;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-radius: 15px;
+    margin:10px auto;
+    font-size: 18px;
+  
+}
+.postcontain{
+  height: 35vw;
+    overflow-y: auto;
+}
+.username{
+    padding: 6px;
+    font-size: 26px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.username:hover{
+    text-decoration: underline;
+}
+.icons{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+.icons img{
+    width: 20px;
+    height: 20px;
+}
+.info{
+    border: 3px solid;
+    width: 29vw;
+    border-bottom: 0px;
+    margin: 5px auto;
+    border-radius: 15px;
+}
+#bio{
+    resize: none;
+      border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(209 184 159);
+    vertical-align: top;
+    text-align: left;
+}
+.biobox{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+        width: 350px;
+    margin: auto;
+}
+.biobox img{
+    width: 30px;
+    height: 30px;
+}
+.follow{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+
+}
+.number{
+    font-size: 20px;
+    font-weight: bold;
+}
+.followers,.following span{
+    font-size: 12px;
+}
+.followers,.following{
+     display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.follow2{
+     border-radius: 10px;
+color: bisque;
+    background-color: brown;
+    padding: 7px;
+}
+.unfollow{
+    border-radius: 10px;
+    background-color: rgb(41, 17, 4);
+    color: white;
+    padding: 7px;
+}
+.mypost{
+    width: 29vw;
+    padding: 10px 10px 0 10px;
+    box-sizing: border-box;
+    border-right: 3px solid;
+    border-left: 3px solid;
+    border-radius: 15px;
+    margin: auto;
+    font-size: 12px;
+}
+.myposts{
+    height: 66vh;
+    overflow: auto;
+}
+.dislike img{
+    transform: scaleY(-1);
+}
+.comLen{
+    display: flex;
+}
+.dislike,.like,.comLen{
+    display: flex;
+    align-items: center;
+}
+@media (max-width:500px){
+    .profile{
+        position: absolute;
+        left: -350px;
+        z-index: 2;
+        width: 65vw;
+        transition: all 1s;
+    }
+    .info{
+        width: 62vw;
+    }
+    .biobox{
+        width: 60vw;
+    }
+    .posts{
+        width: 95vw;
+    }
+    .mypost{
+            width: 62vw;
+    }
+     .write img{
+        width:50px;
+        height: 50px;
+    }
+    .post{
+        width: 90vw;
+    }
+    .postcontain{
+        height: 80vh;
+    }
+}

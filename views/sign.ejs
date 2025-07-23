@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoneWall</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head> 
+
+<body>
+    <div class="bg"></div> 
+
+    <div class="main">
+        <div class="logo"> <img width="300px" src="/app/logo.png" alt=""></div>
+
+        <div class="form"> <div class="sign">
+            
+            <form action="/signup " method="post" id="signupform">
+                <div>SignUp</div>
+                        <input type="text" name="username" placeholder="UserName" required>
+                        <input type="text" name="email" placeholder="Email" required>
+                        <div class="passwd">
+                            <input type="password" class="hide" name="pass" placeholder="Enter Password" required>
+                            <button type="button" onclick="togglepass()" class="toggle">👁️</button>
+                        </div>
+                        <input type="password" name="repass" placeholder="ReEnter Password" required>
+                        <button class="btnsign" type="submit">SignUp</button>
+                    </form> </div>
+                <div class="login">
+                    
+                     <form id="loginform" action="/login" method="post">
+                        <div>Login</div>
+                        <input type="text" name="username1" placeholder="UserName" required>
+
+                        <div class="passwd">
+                            <input type="password" class="hide1" name="pass1" placeholder="Enter Password" required>
+                            <button onclick="togglepass1()" type="button" class="toggle1">👁️</button>
+                        </div>
+
+                        <button type="submit" class="btnlogin">Login</button>
+                    </form>
+                </div></div>
+    </div>
+<script src="/client/sign.js"></script>
+</body>
+
+</html>

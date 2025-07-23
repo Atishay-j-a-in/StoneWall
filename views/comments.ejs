@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoneWall</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/public.css">
+    <link rel="stylesheet" href="/styles/comment.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="container">
+        <div class="profile">
+            <div class="info">
+                <img class="arrow" src="/img/arrow.png" alt="">
+               <div class="username"><img width="35px" height="35px" src="/img/profile.png" alt="">
+                    <%= user.username %>
+                </div>
+                <% if (user.bio == "" ) { %>
+                    <div class="biobox"><textarea placeholder="want to add a bio.." maxlength="100" rows="3" cols="40"
+                            id="bio"></textarea><img src="/img/send.png" alt=""></div>
+                    <% } else { %>
+                        <div class="biobox"><%= user.bio %></div>
+                        <% } %>
+                            <div class="follow">
+                                <div class="followers">
+                                    <div class="number">
+                                        <%= user.followers.length %>
+                                    </div><span>Followers</span>
+                                </div>
+                                <div class="following">
+                                    <div class="number">
+                                        <%= user.following.length %>
+                                    </div><span>Following</span>
+                                </div>
+                
+                            </div>
+            </div>
+
+            <div class="myposts ">
+                   <% if (user.post.length>0) { %>
+                    <% for( let index = user.post.length -1; index >= 0; index-- ) { %>
+                    
+                 
+                   
+                     <div class="mypost">
+                    <div class="content">
+                        <%= user.post[index].content %>
+                    </div>
+                    <div class="icons">
+                          <div class="like" data-postid="<%= user.post[index]._id %>">
+                                <img src="<%=user.post[index].likes.includes(user._id)? '/img/like2.png':'/img/like.png' %>"
+                                    alt=""><span>
+                                    <%= user.post[index].likes.length? user.post[index].likes.length:"" %>
+                                </span>
+                            </div>
+                            <div class="dislike" data-postid="<%= user.post[index]._id %>">
+                                <img src="<%=user.post[index].dislikes.includes(user._id)? '/img/like2.png':'/img/like.png' %>"
+                                    alt=""><span>
+                                    <%= user.post[index].dislikes.length? user.post[index].dislikes.length:"" %>
+                                </span>
+                            </div>
+                            <div class="comLen">
+                                <img class="comment" data-postid="<%=user.post[index]._id %>" src="/img/comment.png" alt="">
+                                <span><%= user.post[index].comments.length? user.post[index].comments.length:"" %></span>
+                            </div>
+ 
+                    </div>
+
+                </div>
+                    <% } %>
+                                 
+
+                <% } %>
+                
+
+
+            </div>
+        </div>
+
+
+
+        <div class="posts">
+            <div class="post">
+                <div class="username"><img width="35px" height="35px" src="/img/profile.png" alt=""><%= post.userId.username %></div>
+                <div class="content"><%= post.content %></div>
+                <div class="icons">
+                   <div class="like" data-postid="<%= post._id %>">
+                                <img src="<%=post.likes.includes(user._id)? '/img/like2.png':'/img/like.png' %>"
+                                    alt=""><span>
+                                    <%= post.likes.length? post.likes.length:"" %>
+                                </span>
+                            </div>
+                            <div class="dislike" data-postid="<%= post._id %>">
+                                <img src="<%=post.dislikes.includes(user._id)? '/img/like2.png':'/img/like.png' %>"
+                                    alt=""><span>
+                                    <%= post.dislikes.length? post.dislikes.length:"" %>
+                                </span>
+                            </div>
+                         <div class="comLen">
+                                <img class="comment" data-postid="<%=post._id %>" src="/img/comment.png" alt="">
+                                <span><%= post.comments.length? post.comments.length:"" %></span>
+                            </div>
+                </div>
+
+            </div>
+            <div class="write comma">
+                <textarea name="content" rows="2" placeholder="Comment ..."></textarea>
+                <div class="send1"><img src="/img/send.png" alt=""></div>
+            </div>
+            <div class="commbox">
+                <% if (comments.length>0) { %>
+                    <% for( let index = comments.length-1; index >=0; index-- ) { %>
+                    
+
+                  
+                   <div class="comment1">
+                    <div class="usernameCom"><img width="20px" height="20px" src="/img/profile.png" alt=""><%= comments[index].author.username %></div>
+                    <div class="commTxt"><%= comments[index].content %></div>
+                </div>
+                <% } %>
+                <% } %>
+               
+              
+                
+            </div>
+
+        </div>
+    </div>
+    <script src="/server/public.js"></script>
+    <script src="/server/comment.js"></script>
+</body>
+
+</html>

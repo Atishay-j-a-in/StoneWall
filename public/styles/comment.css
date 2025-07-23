@@ -1,0 +1,50 @@
+.post{
+    margin-top: 5px;
+}
+.write textarea{
+    height: auto;
+    filter: drop-shadow(0px 0px 6px rgb(117, 29, 29));
+    margin:15px;
+}
+.send1 img{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+.commbox{
+    width: 67vw;
+    height: 54vh;
+    overflow-y:auto;
+    margin: auto;
+    
+}
+.comment1{
+    width: 65vw;
+    padding:5px;
+    box-sizing: border-box;
+    border: 1.5px solid;
+    border-radius: 15px;
+    margin:5px auto;
+    font-size: 14px;
+}
+.usernameCom{
+    padding: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+@media (max-width:500px){
+    .commbox{
+        width: 90vw;
+        height: 65vh;
+    }
+    .comment1{
+        width: 88vw;
+    }
+    .comma textarea{
+        width: 80vw;
+    }
+}
+
